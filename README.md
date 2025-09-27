@@ -60,10 +60,3 @@ python exploretom_first.py
 
 ---
 
-<div align="center">
-
-
-
-**Made with ❤️ for advancing Human-AI collaboration**
-
-</div>
