@@ -19,7 +19,7 @@
 | File | Description | Type |
 |------|-------------|------|
 | `exploretom_first.py` | 🔧 SFT training dataset construction | Data Processing |
-| `hitom_first.json` | 📊 Raw first-perspective HiToM data [[1]](#references) | Raw Data |
+| `hitom_first.json` | 📊 Raw first-perspective HiToM data [1]| Raw Data |
 | `training_exploretom.py` | 🚀 Step 1 of RL training dataset construction | Data Processing |
 | `training_hitom.py` | 🎯 Step 2 of RL training dataset construction | Data Processing |
 
@@ -46,17 +46,17 @@ python exploretom_first.py
 
 | Method | Framework | Description |
 |--------|-----------|-------------|
-| **SFT** | ExploreToM [[2]] | Supervised fine-tuning approach |
-| **RL** | ToM-RL [[3]] | Reinforcement learning framework |
+| **SFT** | ExploreToM [2] | Supervised fine-tuning approach |
+| **RL** | ToM-RL [3] | Reinforcement learning framework |
+
 
 ## 📚 References
-## 📚 References
 
-**[1]** He, Yinghui, et al. *"Hi-tom: A benchmark for evaluating higher-order theory of mind reasoning in large language models."* **arXiv preprint arXiv:2310.16755** (2023). [📄](https://arxiv.org/abs/2310.16755)
+**[1]** He, Yinghui, et al. *"Hi-tom: A benchmark for evaluating higher-order theory of mind reasoning in large language models."* **arXiv preprint arXiv:2310.16755** (2023).
 
-**[2]** Sclar, Melanie, et al. *"Explore theory of mind: Program-guided adversarial data generation for theory of mind reasoning."* **arXiv preprint arXiv:2412.12175** (2024). [📄](https://arxiv.org/abs/2412.12175)
+**[2]** Sclar, Melanie, et al. *"Explore theory of mind: Program-guided adversarial data generation for theory of mind reasoning."* **arXiv preprint arXiv:2412.12175** (2024). 
 
-**[3]** Lu, Yi-Long, et al. *"Do Theory of Mind Benchmarks Need Explicit Human-like Reasoning in Language Models?"* **arXiv preprint arXiv:2504.01698** (2025). [📄](https://arxiv.org/abs/2504.01698)
+**[3]** Lu, Yi-Long, et al. *"Do Theory of Mind Benchmarks Need Explicit Human-like Reasoning in Language Models?"* **arXiv preprint arXiv:2504.01698** (2025).
 
 ---
 
