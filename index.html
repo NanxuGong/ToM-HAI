@@ -6,21 +6,18 @@
   <title>Does Theory of Mind Improvement Really Benefit Human-AI Interactions?</title>
   <style>
     :root {
-      --ink: #162126;
-      --muted: #4f636b;
-      --paper: #f3efe6;
-      --card: #fffcf5;
-      --line: #d5ceb9;
-      --mint: #1a8f84;
-      --sun: #f19e3a;
-      --shadow: 0 20px 56px rgba(11, 23, 30, 0.14);
+      --ink: #152228;
+      --muted: #4a6068;
+      --paper: #f2ecdc;
+      --card: #fffdf7;
+      --line: #d8cfb6;
+      --mint: #157f7c;
+      --gold: #f0a43a;
+      --shadow: 0 18px 48px rgba(14, 24, 30, 0.14);
       --radius: 18px;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
+    html { scroll-behavior: smooth; }
     * { box-sizing: border-box; }
 
     body {
@@ -28,9 +25,9 @@
       font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
       color: var(--ink);
       background:
-        radial-gradient(circle at 16% 16%, rgba(241, 158, 58, 0.24), transparent 34%),
-        radial-gradient(circle at 80% 8%, rgba(26, 143, 132, 0.26), transparent 30%),
-        linear-gradient(145deg, #fbf8f1, #efe8d8);
+        radial-gradient(circle at 16% 14%, rgba(240, 164, 58, 0.24), transparent 36%),
+        radial-gradient(circle at 84% 10%, rgba(21, 127, 124, 0.2), transparent 32%),
+        linear-gradient(140deg, #f9f5ea, #efe6d1);
       min-height: 100vh;
       line-height: 1.65;
     }
@@ -39,13 +36,13 @@
       position: fixed;
       inset: 0;
       pointer-events: none;
-      opacity: 0.15;
+      opacity: 0.13;
       background-image: repeating-linear-gradient(
         0deg,
         transparent,
         transparent 2px,
-        rgba(12, 14, 18, 0.04) 2px,
-        rgba(12, 14, 18, 0.04) 3px
+        rgba(10, 12, 14, 0.05) 2px,
+        rgba(10, 12, 14, 0.05) 3px
       );
       z-index: 0;
     }
@@ -55,19 +52,19 @@
       z-index: 1;
       max-width: 1180px;
       margin: 0 auto;
-      padding: 30px 20px 80px;
+      padding: 30px 20px 90px;
     }
 
     .topbar {
       position: sticky;
       top: 12px;
-      z-index: 3;
+      z-index: 4;
       margin-bottom: 16px;
       border: 1px solid var(--line);
       border-radius: 999px;
-      background: rgba(255, 252, 244, 0.88);
+      background: rgba(255, 252, 244, 0.9);
       backdrop-filter: blur(8px);
-      box-shadow: 0 10px 24px rgba(12, 26, 30, 0.12);
+      box-shadow: 0 10px 26px rgba(12, 24, 30, 0.12);
       padding: 8px 10px;
       display: flex;
       gap: 8px;
@@ -75,9 +72,9 @@
       justify-content: center;
     }
 
-    .topbar .tab {
+    .tab {
       text-decoration: none;
-      color: #1b3138;
+      color: #1d353c;
       border: 1px solid transparent;
       border-radius: 999px;
       padding: 6px 12px;
@@ -85,46 +82,33 @@
       font-weight: 700;
     }
 
-    .topbar .tab:hover {
+    .tab:hover {
       border-color: var(--line);
-      background: #fffef9;
+      background: #fffef8;
     }
 
     .hero {
       padding: 34px 30px;
       border-radius: 26px;
       border: 1px solid var(--line);
-      background: linear-gradient(130deg, rgba(255, 253, 247, 0.95), rgba(255, 249, 235, 0.9));
+      background: linear-gradient(126deg, rgba(255, 252, 245, 0.95), rgba(255, 247, 230, 0.92));
       box-shadow: var(--shadow);
-      animation: lift 0.65s ease both;
       position: relative;
       overflow: hidden;
-      scroll-margin-top: 88px;
+      scroll-margin-top: 90px;
+      animation: lift 0.6s ease both;
     }
 
     .hero::after {
       content: "";
       position: absolute;
-      width: 310px;
-      height: 310px;
+      width: 320px;
+      height: 320px;
+      right: -115px;
+      top: -120px;
       border-radius: 50%;
-      right: -110px;
-      top: -125px;
-      background: radial-gradient(circle, rgba(26, 143, 132, 0.34), transparent 70%);
-      filter: blur(2px);
-    }
-
-    .badge {
-      display: inline-block;
-      border: 1px solid rgba(22, 33, 38, 0.22);
-      border-radius: 999px;
-      padding: 6px 12px;
-      font-size: 0.84rem;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      background: rgba(255, 255, 255, 0.7);
-      text-transform: uppercase;
-      margin-bottom: 14px;
+      background: radial-gradient(circle, rgba(21, 127, 124, 0.32), transparent 72%);
+      filter: blur(3px);
     }
 
     h1, h2, h3 {
@@ -134,76 +118,72 @@
     }
 
     h1 {
-      max-width: 900px;
-      font-size: clamp(1.95rem, 4.5vw, 3.2rem);
+      max-width: 920px;
+      font-size: clamp(1.9rem, 4.6vw, 3.15rem);
       line-height: 1.2;
+    }
+
+    .badge {
+      display: inline-block;
+      border: 1px solid rgba(22, 33, 38, 0.24);
+      border-radius: 999px;
+      padding: 6px 12px;
+      margin-bottom: 14px;
+      font-size: 0.83rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      background: rgba(255, 255, 255, 0.72);
     }
 
     .subtitle {
       margin-top: 14px;
-      max-width: 850px;
+      max-width: 860px;
       color: var(--muted);
-      font-size: clamp(1rem, 2.1vw, 1.18rem);
-    }
-
-    .chips {
-      margin-top: 18px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
+      font-size: clamp(1rem, 2vw, 1.16rem);
     }
 
     .authors {
       margin-top: 16px;
-      color: #2f4048;
-      font-size: 0.96rem;
-      max-width: 920px;
+      color: #30464e;
+      font-size: 0.97rem;
     }
 
-    .hero-actions {
+    .hero-actions,
+    .chips {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
       margin-top: 16px;
     }
 
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
+    .button,
+    .chip {
       border-radius: 999px;
+      border: 1px solid var(--line);
       padding: 8px 14px;
       font-size: 0.9rem;
       font-weight: 700;
-      border: 1px solid var(--line);
-      color: #15303a;
+      text-decoration: none;
+      color: #173138;
       background: #fffef9;
     }
 
     .button.primary {
-      background: linear-gradient(130deg, #1a8f84, #0f7168);
       color: #fff;
-      border-color: #0f7168;
-    }
-
-    .button:hover {
-      filter: brightness(0.98);
+      border-color: #0f706d;
+      background: linear-gradient(132deg, #198681, #0f706d);
     }
 
     .chip {
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      background: var(--card);
       padding: 7px 12px;
-      font-size: 0.88rem;
+      font-size: 0.86rem;
       font-weight: 600;
     }
 
-    .grid {
-      margin-top: 26px;
+    .sections {
+      margin-top: 22px;
       display: grid;
-      grid-template-columns: repeat(12, minmax(0, 1fr));
       gap: 16px;
     }
 
@@ -213,8 +193,8 @@
       background: var(--card);
       box-shadow: 0 9px 26px rgba(18, 32, 39, 0.08);
       padding: 20px;
-      animation: lift 0.65s ease both;
-      scroll-margin-top: 88px;
+      scroll-margin-top: 90px;
+      animation: lift 0.6s ease both;
     }
 
     .card h2 {
@@ -224,13 +204,37 @@
 
     .card p {
       margin: 0;
-      color: #33454e;
+      color: #33464e;
     }
 
-    .s12 { grid-column: span 12; }
-    .s8 { grid-column: span 8; }
-    .s6 { grid-column: span 6; }
-    .s4 { grid-column: span 4; }
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      align-items: stretch;
+    }
+
+    .stats {
+      margin-top: 12px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .stat {
+      border: 1px dashed #c6d3d8;
+      border-radius: 12px;
+      background: #f8fffe;
+      text-align: center;
+      padding: 11px;
+    }
+
+    .stat strong {
+      display: block;
+      color: #0f706d;
+      font-size: 1.45rem;
+      font-weight: 800;
+    }
 
     .timeline {
       margin: 0;
@@ -253,42 +257,42 @@
       border-radius: 50%;
       flex: 0 0 auto;
       background: var(--mint);
-      box-shadow: 0 0 0 5px rgba(26, 143, 132, 0.13);
+      box-shadow: 0 0 0 5px rgba(21, 127, 124, 0.13);
     }
 
-    .stats {
+    .highlight-grid {
+      margin-top: 12px;
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 10px;
-      margin-top: 12px;
     }
 
-    .stat {
-      border: 1px dashed #c5d2d8;
+    .highlight {
+      border: 1px solid #d8e3e5;
       border-radius: 12px;
+      background: #f7fffd;
       padding: 12px;
-      background: #f8fffd;
-      text-align: center;
+      color: #34505a;
+      font-size: 0.93rem;
     }
 
-    .stat strong {
+    .highlight strong {
       display: block;
-      color: #0c6f66;
-      font-size: 1.5rem;
-      font-weight: 800;
+      margin-bottom: 4px;
+      color: #18525c;
     }
 
     figure {
       margin: 0;
       border: 1px solid var(--line);
       border-radius: 14px;
-      padding: 10px;
       background: #fff;
+      padding: 10px;
     }
 
     img {
-      display: block;
       width: 100%;
+      display: block;
       border-radius: 10px;
       height: auto;
     }
@@ -299,87 +303,56 @@
       font-size: 0.88rem;
     }
 
-    .note {
-      margin-top: 22px;
-      padding: 14px 16px;
-      border-left: 4px solid var(--sun);
-      border-radius: 8px;
-      background: #fff9ec;
-      color: #4a3f2a;
-      font-size: 0.95rem;
-    }
-
-    .section-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: end;
-      gap: 12px;
-      margin-bottom: 10px;
-    }
-
-    .section-head p {
-      margin: 0;
-      font-size: 0.9rem;
-      color: var(--muted);
-      font-weight: 600;
-    }
-
-    .highlights {
+    .results-stack {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 10px;
-      margin-top: 12px;
+      gap: 16px;
     }
 
-    .highlights div {
-      border: 1px solid #d8e1e3;
+    .result-item {
+      display: grid;
+      grid-template-columns: minmax(230px, 1fr) minmax(0, 2fr);
+      gap: 16px;
+      align-items: start;
+    }
+
+    .result-meta {
+      border: 1px solid #d7e1e4;
+      border-radius: 14px;
       background: #f8fffd;
-      border-radius: 12px;
-      padding: 12px;
+      padding: 14px;
     }
 
-    .highlights strong {
-      display: block;
-      margin-bottom: 4px;
-      color: #18515a;
-      font-size: 0.93rem;
+    .result-meta h3 {
+      font-size: 1rem;
+      margin-bottom: 6px;
     }
 
-    .footer {
-      margin-top: 18px;
-      color: #40545c;
-      font-size: 0.9rem;
-      text-align: center;
-    }
-
-    pre {
+    .result-meta p {
       margin: 0;
-      overflow-x: auto;
-      padding: 12px;
-      border-radius: 12px;
-      border: 1px solid #d0d9de;
-      background: #f7fbfd;
-      color: #24353d;
-      font-size: 0.88rem;
-      line-height: 1.5;
+      color: #36545e;
+      font-size: 0.92rem;
     }
 
     @keyframes lift {
-      from {
-        opacity: 0;
-        transform: translateY(14px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
-    @media (max-width: 960px) {
-      .s8, .s6, .s4 { grid-column: span 12; }
-      .hero { padding: 28px 20px; }
-      .stats { grid-template-columns: 1fr; }
-      .highlights { grid-template-columns: 1fr; }
+    @media (max-width: 980px) {
+      .split,
+      .result-item,
+      .highlight-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 28px 20px;
+      }
+
       .topbar {
         top: 8px;
         border-radius: 16px;
@@ -394,147 +367,148 @@
     <nav class="topbar" aria-label="Section navigation">
       <a class="tab" href="#hero">Overview</a>
       <a class="tab" href="#abstract">Abstract</a>
-      <a class="tab" href="#intro-fig">Intro Figure</a>
-      <a class="tab" href="#method-fig">Method Figure</a>
+      <a class="tab" href="#intro-fig">Introduction</a>
+      <a class="tab" href="#method-fig">Method</a>
       <a class="tab" href="#results">Results</a>
+      <a class="tab" href="#contributions">Contributions</a>
     </nav>
 
     <section class="hero" id="hero">
       <div class="badge">Paper Overview</div>
       <h1>Does Theory of Mind Improvement Really Benefit Human-AI Interactions?</h1>
       <p class="subtitle">
-        This paper investigates a central question for Human-AI Symbiosis: do gains on static Theory of Mind benchmarks actually transfer into measurable, user-perceived improvements in interactive, real-world conversations?
+        This page presents the core structure of the paper in the same progression as the manuscript: motivation,
+        interactive paradigm, and main result block with Figure 3, Table 1, and Table 2.
       </p>
       <p class="authors">
         Nanxu Gong, Zixin Chen, Haotian Li, Zishu Zhao, Jianxun Lian, Huamin Qu, Yanjie Fu, Xing Xie
       </p>
       <div class="hero-actions">
-        <a class="button primary" href="#intro-fig">View Intro Figure</a>
-        <a class="button" href="#method-fig">View Method Figure</a>
-        <a class="button" href="#results">View Results</a>
+        <a class="button primary" href="#intro-fig">Go to Figure 1</a>
+        <a class="button" href="#method-fig">Go to Figure 2</a>
+        <a class="button" href="#results">Go to Results</a>
       </div>
       <div class="chips">
         <span class="chip">Interactive ToM Evaluation</span>
-        <span class="chip">Goal-Oriented + Experience-Oriented Tasks</span>
-        <span class="chip">Simulation + User Study</span>
-        <span class="chip">Human-AI Symbiosis</span>
+        <span class="chip">Goal-Oriented + Experience-Oriented</span>
+        <span class="chip">Figure 1/2 + Figure 3 + Table 1/2</span>
       </div>
     </section>
 
-    <section class="grid">
-      <article class="card s12" id="abstract" style="animation-delay: .03s">
-        <div class="section-head">
-          <h2>Abstract</h2>
-          <p>From benchmark scores to real interaction value</p>
-        </div>
+    <section class="sections">
+      <article class="card" id="abstract">
+        <h2>Abstract</h2>
         <p>
-          Improving Theory of Mind (ToM) in large language models is widely believed to be critical for socially effective Human-AI interaction.
-          This work challenges the assumption that higher scores on static ToM benchmarks necessarily imply better real interaction outcomes.
-          The paper introduces an interactive ToM evaluation paradigm, systematically studies representative ToM enhancement methods across
-          goal-oriented and experience-oriented tasks, and combines benchmark-based simulation with user studies. The empirical results reveal
-          consistent gaps between benchmark gains, interactive effectiveness, and user-perceived quality.
+          Improving Theory of Mind (ToM) in large language models is widely considered important for socially effective
+          Human-AI interaction. This work tests whether gains on static ToM benchmarks transfer to dynamic interactive tasks.
+          The paper introduces an interactive evaluation paradigm, compares representative ToM enhancement methods across
+          goal-oriented and experience-oriented settings, and reports benchmark plus user-facing findings.
         </p>
-        <div class="highlights">
-          <div>
+        <div class="highlight-grid">
+          <div class="highlight">
             <strong>Evaluation Gap</strong>
-            Static benchmark gains are not a reliable proxy for interactive quality.
+            Static benchmark improvements do not always map to stronger interactive behavior.
           </div>
-          <div>
+          <div class="highlight">
             <strong>Generalization Gap</strong>
-            Improvement patterns differ between goal-oriented and experience-oriented tasks.
+            Performance shifts differ between goal-oriented and experience-oriented tasks.
           </div>
-          <div>
+          <div class="highlight">
             <strong>Perception Gap</strong>
-            Measured gains can remain below user-perceived quality thresholds.
+            Measured gains may remain below user-perceived quality thresholds.
           </div>
         </div>
       </article>
 
-      <article class="card s12" style="animation-delay: .05s">
-        <h2>Research Motivation</h2>
-        <p>
-          Existing ToM evaluations are mostly static, third-person, and multiple-choice. Human-AI interaction is first-person,
-          dynamic, multi-turn, and open-ended. This mismatch can create a gap between benchmark success and real interaction quality.
-        </p>
-      </article>
-      <article class="card s12" style="animation-delay: .1s">
-        <h2>Study Scale</h2>
-        <div class="stats">
-          <div class="stat"><strong>4</strong>Benchmarks</div>
-          <div class="stat"><strong>9</strong>Domains</div>
-          <div class="stat"><strong>2</strong>Task Families</div>
-        </div>
-      </article>
+      <section class="split" id="intro-fig">
+        <article class="card">
+          <h2>Introduction Framing (Figure 1)</h2>
+          <p>
+            The paper motivates a shift from static, third-person story-question-option evaluation to dynamic,
+            first-person Human-AI symbiosis settings. This transition grounds ToM assessment in realistic interaction demands.
+          </p>
+          <div class="stats">
+            <div class="stat"><strong>4</strong>Benchmarks</div>
+            <div class="stat"><strong>9</strong>Domains</div>
+            <div class="stat"><strong>2</strong>Task Families</div>
+          </div>
+        </article>
+        <article class="card">
+          <figure>
+            <img src="img/figure1_intro.png" alt="Figure 1 from the paper: shift from story-question-option paradigm to Human-AI symbiosis paradigm" />
+            <figcaption>Figure 1. Shift from static story-question-option paradigm to Human-AI symbiosis paradigm.</figcaption>
+          </figure>
+        </article>
+      </section>
 
-      <article class="card s12" id="setup" style="animation-delay: .14s">
-        <h2>Interactive Evaluation Paradigm</h2>
-        <ul class="timeline">
-          <li><span class="dot"></span><span><strong>Perspective Shift:</strong> from third-person story reasoning to first-person interaction.</span></li>
-          <li><span class="dot"></span><span><strong>Metric Shift:</strong> from single accuracy to task-specific success indicators.</span></li>
-          <li><span class="dot"></span><span><strong>Setting Shift:</strong> from fixed single-turn prompts to multi-turn, dynamic conversations.</span></li>
-        </ul>
-      </article>
+      <section class="split" id="method-fig">
+        <article class="card">
+          <figure>
+            <img src="img/figure2_method.png" alt="Figure 2 from the paper: overview of interactive ToM evaluation paradigm" />
+            <figcaption>Figure 2. Overview of the interactive ToM evaluation paradigm.</figcaption>
+          </figure>
+        </article>
+        <article class="card">
+          <h2>Method Structure (Figure 2)</h2>
+          <ul class="timeline">
+            <li><span class="dot"></span><span><strong>Perspective Shift:</strong> third-person reasoning to first-person interaction.</span></li>
+            <li><span class="dot"></span><span><strong>Metric Shift:</strong> single accuracy to task-aligned evaluation metrics.</span></li>
+            <li><span class="dot"></span><span><strong>Setting Shift:</strong> fixed prompts to multi-turn dynamic interactions.</span></li>
+          </ul>
+        </article>
+      </section>
 
-      <article class="card s12" id="intro-fig" style="animation-delay: .18s">
-        <h2>Figure 1 (Introduction)</h2>
-        <figure>
-          <img src="img/figure1_intro.png" alt="Figure 1 from the paper: shift from story-question-option paradigm to Human-AI symbiosis paradigm" />
-          <figcaption>Figure 1. The paradigm shift from static story-question-option tests to interactive Human-AI symbiosis tasks.</figcaption>
-        </figure>
-      </article>
-
-      <article class="card s12" id="method-fig" style="animation-delay: .22s">
-        <h2>Method Overview</h2>
-        <p>
-          The method introduces an interactive ToM evaluation pipeline spanning goal-oriented and experience-oriented tasks,
-          and compares multiple ToM enhancement strategies under consistent interactive settings.
-        </p>
-      </article>
-      <article class="card s12" style="animation-delay: .26s">
-        <figure>
-          <img src="img/figure2_method.png" alt="Figure 2 from the paper: overview of interactive ToM evaluation paradigm" />
-          <figcaption>Figure 2. Overview of the interactive ToM evaluation paradigm for real-world Human-AI interaction.</figcaption>
-        </figure>
-      </article>
-
-      <article class="card s12" id="results" style="animation-delay: .3s">
+      <article class="card" id="results">
         <h2>Results Summary</h2>
         <p>
-          The result section is presented in the same order as the paper: Figure 3, Table 1, and Table 2.
-          Figure 3 reports CollabLLM performance, Table 1 reports ChatBench results, and Table 2 reports
-          MentalChat16K and Emotional-Support-Conversation results.
+          This section follows the paper order exactly: Figure 3 first, then Table 1, then Table 2.
         </p>
-      </article>
-      <article class="card s12" style="animation-delay: .34s">
-        <figure>
-          <img src="img/collabllm_scatter_plot.png" alt="Figure 3 from the paper showing model variants' performance on CollabLLM" />
-          <figcaption>Figure 3. Model variants' performance on CollabLLM.</figcaption>
-        </figure>
+        <div class="results-stack">
+          <div class="result-item">
+            <div class="result-meta">
+              <h3>Figure 3: CollabLLM</h3>
+              <p>Model variants' performance comparison on CollabLLM.</p>
+            </div>
+            <figure>
+              <img src="img/collabllm_scatter_plot.png" alt="Figure 3 from the paper showing model variants' performance on CollabLLM" />
+              <figcaption>Figure 3. Model variants' performance on CollabLLM.</figcaption>
+            </figure>
+          </div>
+
+          <div class="result-item">
+            <div class="result-meta">
+              <h3>Table 1: ChatBench</h3>
+              <p>Performance of model variations on ChatBench.</p>
+            </div>
+            <figure>
+              <img src="img/table1_results.png" alt="Table 1 from the paper: ChatBench performance comparison" />
+              <figcaption>Table 1. Performance of model variations on ChatBench.</figcaption>
+            </figure>
+          </div>
+
+          <div class="result-item">
+            <div class="result-meta">
+              <h3>Table 2: MentalChat16K + ESC</h3>
+              <p>Performance on MentalChat16K and Emotional-Support-Conversation.</p>
+            </div>
+            <figure>
+              <img src="img/table2_results.png" alt="Table 2 from the paper: MentalChat16K and Emotional-Support-Conversation performance" />
+              <figcaption>Table 2. Performance of model variations on MentalChat16K and Emotional-Support-Conversation.</figcaption>
+            </figure>
+          </div>
+        </div>
       </article>
 
-      <article class="card s12" style="animation-delay: .38s">
-        <figure>
-          <img src="img/table1_results.png" alt="Table 1 from the paper: ChatBench performance comparison" />
-          <figcaption>Table 1. Performance of model variations on ChatBench.</figcaption>
-        </figure>
-      </article>
-      <article class="card s12" style="animation-delay: .42s">
-        <figure>
-          <img src="img/table2_results.png" alt="Table 2 from the paper: MentalChat16K and Emotional-Support-Conversation performance" />
-          <figcaption>Table 2. Performance of model variations on MentalChat16K and Emotional-Support-Conversation.</figcaption>
-        </figure>
-      </article>
-
-      <article class="card s12" style="animation-delay: .46s">
+      <article class="card" id="contributions">
         <h2>Contributions</h2>
         <ul class="timeline">
           <li><span class="dot"></span><span>Introduces an interactive evaluation paradigm for ToM in Human-AI settings.</span></li>
-          <li><span class="dot"></span><span>Systematically evaluates ToM enhancement methods across both goal-oriented and experience-oriented scenarios.</span></li>
-          <li><span class="dot"></span><span>Identifies critical gaps between benchmark improvements, interaction effectiveness, and perceived user value.</span></li>
+          <li><span class="dot"></span><span>Compares representative ToM enhancement methods across goal-oriented and experience-oriented scenarios.</span></li>
+          <li><span class="dot"></span><span>Reports key gaps between benchmark improvements and practical interaction outcomes.</span></li>
         </ul>
       </article>
-
     </section>
   </main>
 </body>
+</html>
 </html>
