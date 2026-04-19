@@ -76,6 +76,7 @@
     }
 
     .topbar .tab {
+      text-decoration: none;
       color: #1b3138;
       border: 1px solid transparent;
       border-radius: 999px;
@@ -170,6 +171,7 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
+      text-decoration: none;
       border-radius: 999px;
       padding: 8px 14px;
       font-size: 0.9rem;
@@ -183,6 +185,10 @@
       background: linear-gradient(130deg, #1a8f84, #0f7168);
       color: #fff;
       border-color: #0f7168;
+    }
+
+    .button:hover {
+      filter: brightness(0.98);
     }
 
     .chip {
@@ -386,12 +392,12 @@
   <div class="grain" aria-hidden="true"></div>
   <main class="wrap">
     <nav class="topbar" aria-label="Section navigation">
-      <span class="tab">Overview</span>
-      <span class="tab">Abstract</span>
-      <span class="tab">Evaluation Setup</span>
-      <span class="tab">Main Findings</span>
-      <span class="tab">Case Analysis</span>
-      <span class="tab">Resources</span>
+      <a class="tab" href="#hero">Overview</a>
+      <a class="tab" href="#abstract">Abstract</a>
+      <a class="tab" href="#intro-fig">Intro Figure</a>
+      <a class="tab" href="#method-fig">Method Figure</a>
+      <a class="tab" href="#results">Results</a>
+      <a class="tab" href="#resources">Resources</a>
     </nav>
 
     <section class="hero" id="hero">
@@ -404,9 +410,9 @@
         Nanxu Gong, Zixin Chen, Haotian Li, Zishu Zhao, Jianxun Lian, Huamin Qu, Yanjie Fu, Xing Xie
       </p>
       <div class="hero-actions">
-        <span class="button primary">Paper PDF available in repository</span>
-        <span class="button">Abstract section below</span>
-        <span class="button">Findings section below</span>
+        <a class="button primary" href="#intro-fig">View Intro Figure</a>
+        <a class="button" href="#method-fig">View Method Figure</a>
+        <a class="button" href="#results">View Results</a>
       </div>
       <div class="chips">
         <span class="chip">Interactive ToM Evaluation</span>
@@ -470,66 +476,53 @@
         </ul>
       </article>
 
-      <article class="card s12" style="animation-delay: .18s">
+      <article class="card s12" id="intro-fig" style="animation-delay: .18s">
+        <h2>Figure 1 (Introduction)</h2>
         <figure>
-          <img src="img/interface_ranking.png" alt="Figure from the paper showing the shift from static benchmark evaluation to interactive human-AI settings" />
-          <figcaption>Conceptual shift from story-question-option testing to dynamic Human-AI interaction evaluation.</figcaption>
+          <img src="img/figure1_intro.png" alt="Figure 1 from the paper: shift from story-question-option paradigm to Human-AI symbiosis paradigm" />
+          <figcaption>Figure 1. The paradigm shift from static story-question-option tests to interactive Human-AI symbiosis tasks.</figcaption>
         </figure>
       </article>
 
-      <article class="card s6" style="animation-delay: .22s">
-        <h2>Methods Under Comparison</h2>
+      <article class="card s6" id="method-fig" style="animation-delay: .22s">
+        <h2>Method Overview</h2>
         <p>
-          The paper compares representative ToM enhancement strategies, including prompt-based and fine-tuning-based approaches,
-          then evaluates how well they generalize across real interaction scenarios.
+          The method introduces an interactive ToM evaluation pipeline spanning goal-oriented and experience-oriented tasks,
+          and compares multiple ToM enhancement strategies under consistent interactive settings.
         </p>
       </article>
       <article class="card s6" style="animation-delay: .26s">
         <figure>
-          <img src="img/interface_feedback.png" alt="Paper figure showing interaction feedback and evaluation interface" />
-          <figcaption>Interactive interface design used to evaluate model behavior in realistic user exchanges.</figcaption>
+          <img src="img/figure2_method.png" alt="Figure 2 from the paper: overview of interactive ToM evaluation paradigm" />
+          <figcaption>Figure 2. Overview of the interactive ToM evaluation paradigm for real-world Human-AI interaction.</figcaption>
         </figure>
       </article>
 
-      <article class="card s8" id="findings" style="animation-delay: .3s">
-        <h2>Main Findings</h2>
+      <article class="card s8" id="results" style="animation-delay: .3s">
+        <h2>Results Summary</h2>
         <ul class="timeline">
-          <li><span class="dot"></span><span><strong>Evaluation Gap:</strong> improvements on static ToM benchmarks do not consistently transfer to interactive performance.</span></li>
-          <li><span class="dot"></span><span><strong>Generalization Gap:</strong> gains are more likely in experience-oriented tasks than in goal-oriented tasks.</span></li>
-          <li><span class="dot"></span><span><strong>Perception Gap:</strong> measurable model gains can still be too subtle for users to perceive as clearly better interaction quality.</span></li>
+          <li><span class="dot"></span><span><strong>Figure 3:</strong> cross-model interaction results on CollabLLM reveal mismatch between static benchmark gains and interactive outcomes.</span></li>
+          <li><span class="dot"></span><span><strong>Table 1:</strong> ChatBench results quantify behavior differences across model variants in goal-oriented interaction.</span></li>
+          <li><span class="dot"></span><span><strong>Table 2:</strong> MentalChat16K and Emotional-Support-Conversation results show experience-oriented performance patterns.</span></li>
         </ul>
       </article>
       <article class="card s4" style="animation-delay: .34s">
         <figure>
-          <img src="img/collabllm_scatter_plot.png" alt="Scatter plot from the paper comparing benchmark improvements and interactive task performance" />
-          <figcaption>Benchmark gains and interactive outcomes are not always aligned.</figcaption>
+          <img src="img/collabllm_scatter_plot.png" alt="Figure 3 from the paper showing model variants' performance on CollabLLM" />
+          <figcaption>Figure 3. Model variants' performance on CollabLLM.</figcaption>
         </figure>
       </article>
 
       <article class="card s6" style="animation-delay: .38s">
         <figure>
-          <img src="img/tom_wordcloud_app.png" alt="Word cloud figure reflecting user-facing ToM interaction perceptions" />
-          <figcaption>User-facing language patterns in experience-oriented interaction settings.</figcaption>
+          <img src="img/table1_results.png" alt="Table 1 from the paper: ChatBench performance comparison" />
+          <figcaption>Table 1. Performance of model variations on ChatBench.</figcaption>
         </figure>
       </article>
-      <article class="card s6" id="cases" style="animation-delay: .42s">
+      <article class="card s6" style="animation-delay: .42s">
         <figure>
-          <img src="img/user_case.png" alt="Case-based qualitative result from the paper" />
-          <figcaption>Case study examples showing how ToM behavior appears in practical interaction contexts.</figcaption>
-        </figure>
-      </article>
-
-      <article class="card s6" style="animation-delay: .44s">
-        <figure>
-          <img src="img/Interface.png" alt="Interactive interface screenshot used in the study" />
-          <figcaption>Interactive task interface in the evaluation pipeline.</figcaption>
-        </figure>
-      </article>
-
-      <article class="card s6" style="animation-delay: .45s">
-        <figure>
-          <img src="img/hitom.png" alt="HiToM benchmark illustration used as a reference source" />
-          <figcaption>HiToM-style benchmark component used as part of ToM data and evaluation references.</figcaption>
+          <img src="img/table2_results.png" alt="Table 2 from the paper: MentalChat16K and Emotional-Support-Conversation performance" />
+          <figcaption>Table 2. Performance of model variations on MentalChat16K and Emotional-Support-Conversation.</figcaption>
         </figure>
       </article>
 
